@@ -1,3 +1,38 @@
 // Your code here
 "use strict";
-console.log("Hello, World!");
+const dodger = document.getElementById("dodger");
+
+//Left dodger
+function moveDodgerLeft() {
+  const leftNumbers = dodger.style.left.replace("px", "");
+  const left = parseInt(leftNumbers, 10);
+
+  if (left > 0) {
+    dodger.style.left = `${left - 1}px`;
+  }
+}
+
+document.addEventListener("keydown", function (e) {
+  if (e.key === "ArrowLeft") {
+    moveDodgerLeft();
+  }
+});
+
+//Right dodger
+function moveDodgerRight() {
+  const leftNumbers = dodger.style.left.replace("px", "");
+  const left = parseInt(leftNumbers, 10);
+
+  if (left < 360) {
+    dodger.style.left = `${left + 1}px`;
+  }
+}
+
+document.addEventListener("keydown", function (e) {
+  if (e.key === "ArrowLeft") {
+    moveDodgerLeft();
+  }
+  if (e.key === "ArrowRight") {
+    moveDodgerRight();
+  }
+});
