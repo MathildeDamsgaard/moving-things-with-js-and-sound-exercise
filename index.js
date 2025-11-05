@@ -38,6 +38,9 @@ document.addEventListener("keydown", function (e) {
   if (e.key === "ArrowUp") {
     moveDodgerUp();
   }
+  if (e.key === "ArrowDown") {
+    moveDodgerDown();
+  }
 });
 
 function moveDodgerUp() {
@@ -45,5 +48,13 @@ function moveDodgerUp() {
   const bottom = parseInt(bottomNumbers);
   if (bottom < 380) {
     dodger.style.bottom = `${bottom + 1}px`;
+  }
+}
+
+function moveDodgerDown() {
+  const bottomNumbers = dodger.style.bottom.replace("px", "");
+  const bottom = parseInt(bottomNumbers);
+  if (bottom < 380) {
+    dodger.style.bottom = `${bottom - 1}px`;
   }
 }
